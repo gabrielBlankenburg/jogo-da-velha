@@ -1,6 +1,7 @@
 package com.example.gabriel.jogodavelha;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,9 +82,15 @@ public class JogoActivity extends AppCompatActivity {
             Button button = (Button)findViewById(view.getId());
             button.setText(jogador == 1 ? "X" : "0");
             if (jogo.temVencedor()) {
-                mensagem.setText(idioma.jogador + " " + jogador + " " + idioma.venceu);
+                Intent intent = new Intent(this, FimActivity.class);
+                intent.putExtra("mensagem", idioma.jogador + " " + jogador + " " + idioma.venceu);
+                intent.putExtra("voltar", idioma.voltar);
+                startActivity(intent);
             } else if (jogo.empate()) {
-                mensagem.setText(idioma.empate);
+                Intent intent = new Intent(this, FimActivity.class);
+                intent.putExtra("mensagem", idioma.empate);
+                intent.putExtra("voltar", idioma.voltar);
+                startActivity(intent);
             } else {
                 if (jogador == 1) {
                     jogador = 2;

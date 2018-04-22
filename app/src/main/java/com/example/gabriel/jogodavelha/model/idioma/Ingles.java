@@ -16,6 +16,7 @@ public class Ingles extends Idioma{
         this.portugues = "Portuguese";
         this.ingles = "English";
         this.escolhaIdioma = "Choose a language";
+        this.voltar = "Main Menu";
     }
 
     public String getCurrent() {

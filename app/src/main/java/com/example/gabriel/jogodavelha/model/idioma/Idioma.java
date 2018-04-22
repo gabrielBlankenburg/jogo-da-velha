@@ -15,6 +15,7 @@ public abstract class Idioma {
     public String portugues;
     public String ingles;
     public String escolhaIdioma;
+    public String voltar;
 
     public abstract String getCurrent();
 }
