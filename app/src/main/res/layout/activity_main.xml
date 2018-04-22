@@ -8,11 +8,12 @@
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/jogoDaVelha"
         android:layout_width="224dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="79dp"
-        android:layout_marginTop="114dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="68dp"
+        android:layout_marginTop="112dp"
+        android:gravity="center"
         android:text="Jogo da Velha"
         android:textSize='35dp'
         app:layout_constraintBottom_toTopOf="@+id/jogar"
@@ -24,21 +25,21 @@
         android:id="@+id/jogar"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="18dp"
+        android:onClick="jogar"
         android:text="Jogar"
         android:textColor="@color/colorButton"
         android:textSize='15dp'
-        android:onClick="jogar"
         app:layout_constraintBottom_toTopOf="@+id/placar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/jogoDaVelha" />
 
     <Button
         android:id="@+id/placar"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="219dp"
+        android:layout_marginBottom="227dp"
         android:text="Classificação"
         android:textColor="@color/colorButton"
         android:textSize='15dp'
