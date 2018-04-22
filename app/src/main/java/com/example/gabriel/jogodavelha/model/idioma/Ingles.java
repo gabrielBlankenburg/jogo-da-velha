@@ -10,7 +10,15 @@ public class Ingles extends Idioma{
         this.empate = "Draw";
         this.jogador = "Player";
         this.jogoDaVelha = "Tic Tac Toe";
-        this.o = "The";
         this.venceu = "Wins";
+        this.idioma = "settings";
+        this.salvo = "Saved";
+        this.portugues = "Portuguese";
+        this.ingles = "English";
+        this.escolhaIdioma = "Choose a language";
+    }
+
+    public String getCurrent() {
+        return "en";
     }
 }

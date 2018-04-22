@@ -8,7 +8,13 @@ public abstract class Idioma {
     public String jogoDaVelha;
     public String jogar;
     public String jogador;
-    public String o;
     public String venceu;
     public String empate;
+    public String idioma;
+    public String salvo;
+    public String portugues;
+    public String ingles;
+    public String escolhaIdioma;
+
+    public abstract String getCurrent();
 }

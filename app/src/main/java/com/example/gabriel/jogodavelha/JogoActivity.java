@@ -1,5 +1,7 @@
 package com.example.gabriel.jogodavelha;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,21 +9,34 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gabriel.jogodavelha.model.JogoDaVelha;
+import com.example.gabriel.jogodavelha.model.idioma.Idioma;
+import com.example.gabriel.jogodavelha.model.idioma.Ingles;
+import com.example.gabriel.jogodavelha.model.idioma.Portugues;
 
 public class JogoActivity extends AppCompatActivity {
     JogoDaVelha jogo;
     TextView mensagem;
     byte jogador;
+    Idioma idioma;
+    SharedPreferences preferencias;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo);
 
+        preferencias = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+
+        if (preferencias.getString("idioma", "pt").equals("pt")) {
+            idioma = new Portugues();
+        } else {
+            idioma = new Ingles();
+        }
+
         jogador = 1;
         jogo = new JogoDaVelha();
         mensagem = (TextView)findViewById(R.id.mensagem);
 
-        mensagem.setText("Jogador " + jogador);
+        mensagem.setText(idioma.jogador + " " + jogador);
 
     }
 
@@ -66,16 +81,16 @@ public class JogoActivity extends AppCompatActivity {
             Button button = (Button)findViewById(view.getId());
             button.setText(jogador == 1 ? "X" : "0");
             if (jogo.temVencedor()) {
-                mensagem.setText("O Jogador " + jogador + " venceu!");
+                mensagem.setText(idioma.jogador + " " + jogador + " " + idioma.venceu);
             } else if (jogo.empate()) {
-                mensagem.setText("Empate!");
+                mensagem.setText(idioma.empate);
             } else {
                 if (jogador == 1) {
                     jogador = 2;
                 } else {
                     jogador = 1;
                 }
-                mensagem.setText("Jogador " + jogador);
+                mensagem.setText(idioma.jogador + " " + jogador);
             }
         }
     }

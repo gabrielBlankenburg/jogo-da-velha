@@ -4,51 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gabriel.jogodavelha.MainActivity"
+    tools:context="com.example.gabriel.jogodavelha.ConfigActivity"
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/jogoDaVelha"
+        android:id="@+id/escolhaIdioma"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="48dp"
         android:layout_marginEnd="67dp"
         android:layout_marginStart="67dp"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="69dp"
         android:gravity="center"
-        android:text="Jogo da Velha"
+        android:text="Escolha um idioma"
         android:textSize='35dp'
-        app:layout_constraintBottom_toTopOf="@+id/jogar"
+        app:layout_constraintBottom_toTopOf="@+id/pt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/jogar"
+        android:id="@+id/pt"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:onClick="jogar"
-        android:text="Jogar"
+        android:layout_marginBottom="18dp"
+        android:onClick="escolheIdioma"
+        android:text="Portugues"
         android:textColor="@color/colorButton"
         android:textSize='15dp'
-        app:layout_constraintBottom_toTopOf="@+id/config"
+        app:layout_constraintBottom_toTopOf="@+id/en"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jogoDaVelha" />
+        app:layout_constraintTop_toBottomOf="@+id/escolhaIdioma" />
 
     <Button
-        android:id="@+id/config"
+        android:id="@+id/en"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="179dp"
-        android:text="Configurações"
+        android:layout_marginBottom="219dp"
+        android:onClick="escolheIdioma"
+        android:text="Ingles"
         android:textColor="@color/colorButton"
         android:textSize='15dp'
-        android:onClick="config"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jogar" />
+        app:layout_constraintTop_toBottomOf="@+id/pt" />
 
 </android.support.constraint.ConstraintLayout>

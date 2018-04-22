@@ -10,7 +10,15 @@ public class Portugues extends Idioma{
         this.empate = "Emptate";
         this.jogador = "Jogador";
         this.jogoDaVelha = "Jogo Da Velha";
-        this.o = "O";
         this.venceu = "Venceu";
+        this.idioma = "configurações";
+        this.salvo = "Salvo";
+        this.portugues = "Português";
+        this.ingles = "Inglês";
+        this.escolhaIdioma = "Escolha um idioma";
+    }
+
+    public String getCurrent() {
+        return "br";
     }
 }
